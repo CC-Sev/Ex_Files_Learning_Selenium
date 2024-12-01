@@ -28,4 +28,4 @@ def test_youtube_search():
     finally:
         # Close the browser
         driver.quit()
-# test
+# automated test
