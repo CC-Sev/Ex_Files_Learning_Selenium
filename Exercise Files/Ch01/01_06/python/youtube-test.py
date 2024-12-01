@@ -27,4 +27,5 @@ def test_youtube_search():
 
     finally:
         # Close the browser
+        #if
         driver.quit()
