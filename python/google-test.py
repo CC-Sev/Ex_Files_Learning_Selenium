@@ -1,8 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-import time
+from selenium.webdriver.chrome.service import Service
 
 def test_google_search():
     # Set up ChromeDriver automatically
@@ -10,15 +8,18 @@ def test_google_search():
     driver = webdriver.Chrome(service=service)
 
     try:
-        # Open YouTube homepage
+        # Open Google and perform a search
         driver.get("https://www.google.com")
-
-        # Find the search bar element and enter a search term
+        
         search_box = driver.find_element("name", "q")
-        search_box.send_keys("Selenium WebDriver tutorial")
+        search_box.send_keys("Selenium")
         search_box.submit()
 
-        
+        # Wait for user input to quit
+        #while True:
+        #    user_input = input('Type q to quit: ')
+        #    if user_input.lower() == "q":
+        #        break
     finally:
         # Close the browser
         driver.quit()
